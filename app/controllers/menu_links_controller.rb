@@ -23,18 +23,6 @@ class MenuLinksController < ApplicationController
       flash[:notice] = l(:notice_successful_create)
       redirect_to :action => 'index'
     else
-      if @menu_link.name.blank?
-        flash.now[:error] = l(:error_blank_name)
-      end
-      if @menu_link.url.blank?
-        flash.now[:error] = l(:error_blank_url)
-      end
-      if @menu_link.name.length > 60
-        flash.now[:error] = l(:error_name_length)
-      end
-      if @menu_link.name.length > 255
-        flash.now[:error] = l(:error_url_length)
-      end
       render :action => 'new'
     end
   end
@@ -49,18 +37,6 @@ class MenuLinksController < ApplicationController
       flash[:notice] = l(:notice_successful_update)
       redirect_to :action => 'index'
     else
-      if @menu_link.name.blank?
-        flash.now[:error] = l(:error_blank_name)
-      end
-      if @menu_link.url.blank?
-        flash.now[:error] = l(:error_blank_url)
-      end
-      if @menu_link.name.length > 60
-        flash.now[:error] = l(:error_name_length)
-      end
-      if @menu_link.name.length > 255
-        flash.now[:error] = l(:error_url_length)
-      end
       render :action => 'edit'
     end
   end

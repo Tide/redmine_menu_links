@@ -7,21 +7,24 @@
 <table class="list">
   <thead><tr>
   <th><%=l(:field_name)%></th>
+  <th><%=l(:field_link_type)%></th>
   <th><%=l(:field_is_enabled)%></th>
+  <th><%=l(:field_new_window)%></th>
   <th><%=l(:button_sort)%></th>
   <th></th>
   </tr></thead>
   <tbody>  
 <% for link in @menu_links %>
   <tr class="<%= cycle("odd", "even") %>">
-  <td><%= link_to link.name, :action => 'edit', :id => link %></td>
+  <td align="center"><%= link_to link.name, link.url, {:target => link.new_window ? '_blank' : nil} %></td>
+  <td align="center"><%= link.for_everyone? ? l(:label_everyone) : (link.for_users_only? ? l(:label_users_only) : l(:label_administrators_only)) %></td>
   <td align="center"><%= checked_image link.is_enabled %></td>
+  <td align="center"><%= checked_image link.new_window %></td>
   <td align="center" style="width:15%;"><%= reorder_links('menu_link', {:action => 'update', :id => link}) %></td>
   <td class="buttons">
-    <%= link_to(l(:button_delete), { :action => 'destroy', :id => link },
-    															 :method => :post,
-    															 :confirm => l(:text_are_you_sure),
-    															 :class => 'icon icon-del') %>
+    <%= link_to l(:button_edit), {:action => 'edit', :id => link}, {:class=>'icon icon-edit'} %>
+    <%= link_to(l(:button_delete), {:action => 'destroy', :id => link},
+                   {:method => :post, :confirm => l(:text_are_you_sure), :class => 'icon icon-del'}) %>
   </td>
   </tr>
 <% end %>

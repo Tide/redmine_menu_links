@@ -12,4 +12,4 @@ Redmine::Plugin.register :redmine_menu_links do
   menu :admin_menu, :menu_links, { :controller => 'menu_links', :action => 'index'}, :caption => :label_menu_links
 end
 
-MenuLink.show
+MenuLink.show if MenuLink.table_exists?

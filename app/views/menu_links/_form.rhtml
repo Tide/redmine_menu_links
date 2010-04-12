@@ -1,4 +1,4 @@
-<%= error_messages_for 'menu_links' %>
+<%= error_messages_for 'menu_link' %>
 
 <div class="box">
 <!--[form:menu_links]-->
@@ -9,7 +9,7 @@
 <%= text_field 'menu_link', 'url', :size => 60 %></p>
 
 <p><label for="menu_link_link_type"><%=l(:field_link_type)%></label>
-<%= select('menu_link', 'link_type', ([["Everyone",0],["Members",1],["Admins",2]])) %></p>
+<%= select('menu_link', 'link_type', ([[l(:label_everyone), MenuLink::EVERYONE],[l(:label_users_only), MenuLink::USERS_ONLY],[l(:label_administrators_only), MenuLink::ADMINISTRATORS_ONLY]])) %></p>
 
 <p><label for="menu_link_is_enabled"><%=l(:field_is_enabled)%></label>
 <%= check_box 'menu_link', 'is_enabled' %></p>
