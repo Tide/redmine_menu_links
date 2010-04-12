@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_menu_links do
   url         'http://github.com/Tide/redmine_menu_links'
   version '0.0.1'
     
-  menu :admin_menu, :menu_links, { :controller => 'menu_links', :action => 'index'}, :caption => :label_menu_links
+  menu :admin_menu, :menu_links, { :controller => 'menu_links', :action => 'index'}, :caption => :label_menu_links, :html => { :class => 'icon icon-attachment' }
 end
 
 MenuLink.show if MenuLink.table_exists?
