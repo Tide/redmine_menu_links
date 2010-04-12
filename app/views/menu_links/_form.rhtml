@@ -1,0 +1,23 @@
+<%= error_messages_for 'menu_links' %>
+
+<div class="box">
+<!--[form:menu_links]-->
+<p><label for="menu_link_name"><%=l(:field_name)%><span class="required"> *</span></label>
+<%= text_field 'menu_link', 'name' %></p>
+
+<p><label for="menu_link_url"><%=l(:field_url)%><span class="required"> *</span></label>
+<%= text_field 'menu_link', 'url', :size => 60 %></p>
+
+<p><label for="menu_link_link_type"><%=l(:field_link_type)%></label>
+<%= select('menu_link', 'link_type', ([["Everyone",0],["Members",1],["Admins",2]])) %></p>
+
+<p><label for="menu_link_is_enabled"><%=l(:field_is_enabled)%></label>
+<%= check_box 'menu_link', 'is_enabled' %></p>
+
+<p><label for="menu_link_new_window"><%=l(:field_new_window)%></label>
+<%= check_box 'menu_link', 'new_window' %></p>
+
+<%= call_hook(:view_menu_links_form, :menu_links => @menu_links) %>
+
+<!--[eoform:menu_links]-->
+</div>

@@ -1,0 +1,35 @@
+<div class="contextual">
+<%= link_to l(:label_menu_link_new), {:action => 'new'}, :class => 'icon icon-add' %>
+</div>
+
+<h2><%=l(:label_menu_links)%></h2>
+ 
+<table class="list">
+  <thead><tr>
+  <th><%=l(:field_name)%></th>
+  <th><%=l(:field_is_enabled)%></th>
+  <th><%=l(:button_sort)%></th>
+  <th></th>
+  </tr></thead>
+  <tbody>  
+<% for link in @menu_links %>
+  <tr class="<%= cycle("odd", "even") %>">
+  <td><%= link_to link.name, :action => 'edit', :id => link %></td>
+  <td align="center"><%= checked_image link.is_enabled %></td>
+  <td align="center" style="width:15%;"><%= reorder_links('menu_link', {:action => 'update', :id => link}) %></td>
+  <td class="buttons">
+    <%= link_to(l(:button_delete), { :action => 'destroy', :id => link },
+    															 :method => :post,
+    															 :confirm => l(:text_are_you_sure),
+    															 :class => 'icon icon-del') %>
+  </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+<% if @menu_links_pages %>
+  <p class="pagination"><%= pagination_links_full @menu_links_pages %></p>
+<% end %>
+
+<% html_title(l(:label_menu_links)) -%>

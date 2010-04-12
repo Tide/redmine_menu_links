@@ -1,0 +1,26 @@
+= Menu Links Plugin
+
+A plugin which adds multiple links to the top menu of Redmine.
+
+== Authors
+
+Tide, Yuki Kita
+
+== Features
+
+- Multiple links
+- Link sorting
+- Each link can be viewed in one of 3 states : Everyone, Members, Admins
+- Each link has the option ot open in a new window
+- Each link can be enabled/disabled at any time
+
+== Installation and Setup
+
+1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins.  Make sure the plugin is installed to +vendor/plugins/redmine_menu_links+
+2. Run the plugin migrations +rake db:migrate_plugins+
+3. Restart Redmine
+4. Login and configure the plugin (Administration > Menu Links)
+
+== License
+
+This plugin is licensed under the GNU GPL v2.  See COPYRIGHT.txt and GPL.txt for details.

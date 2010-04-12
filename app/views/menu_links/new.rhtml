@@ -1,0 +1,6 @@
+<h2><%= link_to l(:label_menu_links), :controller => 'menu_links', :action => 'index' %> &#187; <%=l(:label_menu_link_new)%></h2>
+
+<% form_tag({:action => 'create'}, :class => "tabular") do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag l(:button_create) %>
+<% end %>
