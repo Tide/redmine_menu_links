@@ -10,7 +10,7 @@ Tide, Yuki Kita
 
 - Multiple links
 - Link sorting
-- Each link can be viewed in one of 3 states : Everyone, Members, Admins
+- Each link can be viewed in one of 3 states : Everyone, Users Only, Admins Only
 - Each link has the option ot open in a new window
 - Each link can be enabled/disabled at any time
 
