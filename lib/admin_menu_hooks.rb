@@ -13,7 +13,7 @@ padding-top: 2px;
 padding-bottom: 3px;
 }
 
-.icon-menu-links { background-image: url(../images/menu-links.png); }
+.icon-menu-links { background-image: url(../plugin_assets/redmine_menu_links/images/menu-links.png); }
 
   </style>
 CSS
