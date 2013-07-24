@@ -2,9 +2,16 @@
 
 A plugin which adds multiple links to the top menu of Redmine.
 
+* Homepage: https://github.com/Tide/redmine_menu_links
+
+== Compatibility
+
+Redmine 2.3.x, 2.2.x, 2.1.x, 2.0.x
+
 == Authors
 
-Tide, Yuki Kita
+* Tide [https://github.com/Tide]
+* Yuki Kita [https://github.com/YukiKita]
 
 == Features
 
@@ -14,17 +21,14 @@ Tide, Yuki Kita
 - Each link has the option ot open in a new window
 - Each link can be enabled/disabled at any time
 
-== Compatibility
-
-Redmine 2.3.x, 2.2.x, 2.1.x, 2.0.x
-
 == Installation and Setup
 
-1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins.
-2. Make sure the plugin is installed to +plugins/redmine_menu_links+
-3. Run the plugin migrations +rake redmine:plugins:migrate RAILS_ENV=production+
-4. Restart Redmine
-5. Login and configure the plugin (Administration > Menu Links)
+* Follow the Redmine plugin installation steps at: http://www.redmine.org/projects/redmine/wiki/Plugins.
+
+!. Make sure the plugin is installed to +plugins/redmine_menu_links+
+2. Run the plugin migrations +rake redmine:plugins:migrate RAILS_ENV=production+
+3. Restart Redmine
+4. Login and configure the plugin (Administration > Menu Links)
 
 == License
 
