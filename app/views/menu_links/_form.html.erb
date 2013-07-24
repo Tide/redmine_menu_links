@@ -1,0 +1,13 @@
+<%= error_messages_for 'menu_link' %>
+
+<div class="box tabular">
+
+  <p><%= f.text_field :name, :required => true %></p>
+  <p><%= f.text_field :url, :required => true ,:size => 100 %></p>
+  <p><%= f.select :link_type, [[l(:label_everyone), MenuLink::EVERYONE],[l(:label_users_only), MenuLink::USERS_ONLY],[l(:label_administrators_only), MenuLink::ADMINISTRATORS_ONLY]] %></p>
+  <p><%= f.check_box :is_enabled %></p>
+  <p><%= f.check_box :new_window %></p>
+
+  <%= call_hook(:view_menu_links_form, :menu_links => @menu_links) %>
+
+</div>

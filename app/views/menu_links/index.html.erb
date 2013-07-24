@@ -16,7 +16,7 @@
   <tbody>  
 <% for link in @menu_links %>
   <tr class="<%= cycle("odd", "even") %>">
-  <td align="center"><%= link_to link.name, link.url, {:target => link.new_window ? '_blank' : nil} %></td>
+  <td><%= link_to link.name, link.url, {:target => link.new_window ? '_blank' : nil} %></td>
   <td align="center"><%= link.for_everyone? ? l(:label_everyone) : (link.for_users_only? ? l(:label_users_only) : l(:label_administrators_only)) %></td>
   <td align="center"><%= checked_image link.is_enabled %></td>
   <td align="center"><%= checked_image link.new_window %></td>
@@ -32,7 +32,7 @@
 </table>
 
 <% if @menu_links_pages %>
-  <p class="pagination"><%= pagination_links_full @menu_links_pages %></p>
+  <p class="pagination"><%= pagination_links_full @menu_links_pages, @menu_links_count %></p>
 <% end %>
 
 <% html_title(l(:label_menu_links)) -%>

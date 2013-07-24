@@ -1,0 +1,6 @@
+<h2><%= link_to l(:label_menu_links), :controller => 'menu_links', :action => 'index' %> &#187; <%=h @menu_link.name %></h2>
+
+<%= labelled_form_for :menu_link, @menu_link, :url => { :controller => 'menu_links', :action => 'update', :id => @menu_link } do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p><%= f.submit l(:button_save) %></p>
+<% end %>

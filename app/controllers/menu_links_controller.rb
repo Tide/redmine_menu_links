@@ -1,15 +1,19 @@
 class MenuLinksController < ApplicationController
   unloadable
-  layout 'base'
+  layout 'admin'
   before_filter :require_admin
   before_filter :clean_menu_links, :only => [:destroy, :create, :update, :move]
   after_filter  :show_menu_links, :only => [:destroy, :create, :update, :move]
-  
-  verify :method => :post, :only => [ :destroy, :create, :update, :move ],
-         :redirect_to => { :action => :index }
-         
+
   def index
-    @menu_link_pages, @menu_links = paginate :menu_link, :per_page => 25, :order => "position"
+    @menu_links_count = MenuLink.find(:all).count
+    @menu_links_pages = Paginator.new(@menu_links_count, per_page_option, params[:page])
+    @offset ||= @menu_links_pages.offset
+    @menu_links = MenuLink.find(:all,
+                          :order => "#{MenuLink.table_name}.position ASC",
+                          :offset => @offset,
+                          :limit => per_page_option)
+                          
     render :action => "index", :layout => false if request.xhr?
   end
 

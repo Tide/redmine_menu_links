@@ -48,7 +48,7 @@ class MenuLink < ActiveRecord::Base
 
   def self.show
     self.each_enabled_link do |menu_link|
-      option = {:caption=>menu_link.name, :before => :projects}
+      option = {:caption=>menu_link.name, :before => :administration}
       option[:html] = {:target => '_blank'} if menu_link.new_window
       option[:if] = menu_link.for_users_only? ? Proc.new {User.current.logged?} : (menu_link.for_administrators_only? ? Proc.new {User.current.admin?} : nil)
       Redmine::MenuManager.map(:top_menu).push(menu_link.to_sym, menu_link.url, option)

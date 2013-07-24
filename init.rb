@@ -1,7 +1,7 @@
 require 'redmine'
-require 'admin_menu_hooks'
+require 'menu_links_hooks'
 
-RAILS_DEFAULT_LOGGER.info 'Menu Links plugin 0.0.1 for Redmine'
+Rails.logger.info 'Starting Menu Links Plugin for Redmine'
 
 Redmine::Plugin.register :redmine_menu_links do
   name 'Menu Links Plugin'
@@ -10,7 +10,7 @@ Redmine::Plugin.register :redmine_menu_links do
   url         'http://github.com/Tide/redmine_menu_links' if respond_to?(:url)
   version '0.0.1'
     
-  menu :admin_menu, :menu_links, { :controller => 'menu_links', :action => 'index'}, :caption => :label_menu_links, :html => { :class => 'icon icon-menu-links' }
+  menu :admin_menu, :menu_links, { :controller => 'menu_links', :action => 'index'}, :caption => :label_menu_links
 end
 
 MenuLink.show if MenuLink.table_exists?

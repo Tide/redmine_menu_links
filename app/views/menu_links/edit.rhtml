@@ -1,6 +1,0 @@
-<h2><%= link_to l(:label_menu_links), :controller => 'menu_links', :action => 'index' %> &#187; <%=h @menu_link.name %></h2>
-
-<% form_tag({:action => 'update', :id => @menu_link}, :class => "tabular") do %>
-  <%= render :partial => 'form' %>
-  <%= submit_tag l(:button_save) %>
-<% end %>
