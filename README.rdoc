@@ -25,7 +25,7 @@ Redmine 2.3.x, 2.2.x, 2.1.x, 2.0.x
 
 * Follow the Redmine plugin installation steps at: http://www.redmine.org/projects/redmine/wiki/Plugins.
 
-!. Make sure the plugin is installed to +plugins/redmine_menu_links+
+1. Make sure the plugin is installed to +plugins/redmine_menu_links+
 2. Run the plugin migrations +rake redmine:plugins:migrate RAILS_ENV=production+
 3. Restart Redmine
 4. Login and configure the plugin (Administration > Menu Links)
