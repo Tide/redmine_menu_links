@@ -8,7 +8,7 @@ Redmine::Plugin.register :redmine_menu_links do
   author 'Tide, Yuki Kita'
   description 'A plugin which adds links to the top menu of Redmine.'
   url         'http://github.com/Tide/redmine_menu_links' if respond_to?(:url)
-  version '0.0.1'
+  version '1.0.0'
     
   menu :admin_menu, :redmine_menu_links, { :controller => 'menu_links', :action => 'index'}, :caption => :label_menu_links
 end
