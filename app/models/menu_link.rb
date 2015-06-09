@@ -4,7 +4,7 @@ class MenuLink < ActiveRecord::Base
   validates_presence_of :name, :url
   validates_length_of :name, :maximum => 60
   validates_length_of :url, :maximum => 255
-  validates_format_of :url, :with => URI.regexp(['http', 'https'])
+  validates_format_of :url, :with => URI.regexp(['http', 'https']), :if => "!relative_url"
 
   EVERYONE = 0
   USERS_ONLY = 1
