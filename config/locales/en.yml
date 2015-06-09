@@ -9,6 +9,7 @@ en:
   field_is_enabled: "Enabled"
   field_new_window: "Open in new window"
   field_link_type: "Visible to"
+  field_relative_url: "Relative URL Link"
   button_sort: "Sort"
   error_unable_delete_menu_link: "Unable to delete menu link"
   notice_successful_update: "Successful update"
